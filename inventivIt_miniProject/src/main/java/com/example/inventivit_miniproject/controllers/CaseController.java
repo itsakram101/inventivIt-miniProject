@@ -12,8 +12,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/cases")
 public class CaseController {
 
-    @Autowired
     private CaseService caseService;
+
+    @Autowired
+    public CaseController(CaseService caseService) {
+        this.caseService = caseService;
+    }
 
     @GetMapping("/{id}")
     public Case getById(@RequestBody Long id){

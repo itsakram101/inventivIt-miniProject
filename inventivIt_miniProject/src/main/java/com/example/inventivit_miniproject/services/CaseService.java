@@ -8,12 +8,16 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
 
-@AllArgsConstructor
 @Service
 public class CaseService implements Services<Case>{
 
-    @Autowired
+
     private final CaseDao caseDao;
+
+    @Autowired
+    public CaseService(CaseDao caseDao) {
+        this.caseDao = caseDao;
+    }
 
     @Override
     public Case get(Long id) {
