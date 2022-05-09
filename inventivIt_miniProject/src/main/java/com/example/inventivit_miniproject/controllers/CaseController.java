@@ -34,7 +34,7 @@ public class CaseController {
         return caseService.edit(Case);
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public boolean delete(@PathVariable("id") Long id){
 
 
