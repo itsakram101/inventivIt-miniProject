@@ -16,15 +16,19 @@ public class Case {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name="caseId")
+    @Column(name="caseId", nullable = false)
     private Long id;
 
+    @Column(nullable = false)
     private LocalDateTime creationDate;
 
+    @Column(nullable = false)
     private LocalDateTime lastUpdateDate;
 
+    @Column(nullable = false, length = 255)
     private String title;
 
+    @Column(nullable = false, length = 2056)
     private String description;
 
 
