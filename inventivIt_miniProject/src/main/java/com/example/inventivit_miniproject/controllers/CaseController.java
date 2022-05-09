@@ -20,7 +20,7 @@ public class CaseController {
     }
 
     @GetMapping("/{id}")
-    public Case getById(@RequestBody Long id){
+    public Case getById(@PathVariable("id") Long id){
         return caseService.get(id);
     }
 
@@ -35,8 +35,10 @@ public class CaseController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public boolean delete(@RequestBody Case Case){
-        return caseService.delete(Case);
+    public boolean delete(@PathVariable("id") Long id){
+
+
+        return caseService.delete(caseService.get(id));
     }
 
 }
